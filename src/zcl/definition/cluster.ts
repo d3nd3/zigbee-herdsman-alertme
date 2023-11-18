@@ -5603,7 +5603,7 @@ const Cluster: {
             setRemoteMode: {
                 ID: 0x01,
                 parameters: [
-                    {name: 'mode', type: DataType.default.uint8},
+                    {name: 'mode', type: DataType.uint8},
                     //{name: 'home_network_flag', type: dataType_1.default.uint8},
                     //{name: 'profileID', type: dataType_1.default.uint16}
                 ],
@@ -5612,8 +5612,8 @@ const Cluster: {
             setSwitchState: {
                 ID: 0x02,
                 parameters: [
-                    {name: 'state', type: DataType.default.uint8},
-                    {name: 'home_network_flag', type: DataType.default.uint8}, //relayMask
+                    {name: 'state', type: DataType.uint8},
+                    {name: 'home_network_flag', type: DataType.uint8}, //relayMask
                     //{name: 'profileID', type: dataType_1.default.uint16}
                 ]
             },
@@ -5642,9 +5642,9 @@ const Cluster: {
                 ID: 0x80,
                 parameters: [
                     //powerStatus == local/remote && battery/mains
-                    {name: 'powerStatus', type: DataType.default.uint8},
+                    {name: 'powerStatus', type: DataType.uint8},
                     //on/off
-                    {name: 'switchState', type: DataType.default.uint8}
+                    {name: 'switchState', type: DataType.uint8}
                 ]
             }
         }
@@ -5660,23 +5660,23 @@ const Cluster: {
                 ID: 0x81,
                 parameters: [
                     //power value in kW
-                    {name: 'powerDemand', type: DataType.default.uint16},
+                    {name: 'powerDemand', type: DataType.uint16},
                 ]
             },
             powerConsumptionReport: {
                 ID: 0x82,
                 parameters: [
                     //power value in kW/hr
-                    {name: 'powerConsumption', type: DataType.default.uint32},
+                    {name: 'powerConsumption', type: DataType.uint32},
                     //uptime in seconds
-                    {name: 'uptime', type: DataType.default.uint32},
-                    {name: 'unknown', type: DataType.default.uint8}
+                    {name: 'uptime', type: DataType.uint32},
+                    {name: 'unknown', type: DataType.uint8}
                 ]
             },
             powerMeterUpdate: {
                 ID: 0x86,
                 parameters: [
-                    {name: 'powerMeterUnknown', type: BuffaloZclDataType.default.BUFFER}
+                    {name: 'powerMeterUnknown', type: BuffaloZclDataType.BUFFER}
                 ]
             },
 
@@ -5689,15 +5689,15 @@ const Cluster: {
             setRTC: {
                 ID: 0x00,
                 parameters: [
-                    {name: "year", type: DataType.default.uint16},
-                    {name: "month", type: DataType.default.uint8},
-                    {name: "dayOfMonth", type: DataType.default.uint8},
-                    {name: "dayOfWeek", type: DataType.default.uint8},
-                    {name: "hours", type: DataType.default.uint8},
-                    {name: "minutes", type: DataType.default.uint8},
-                    {name: "seconds", type: DataType.default.uint8},
-                    {name: "timezone", type: DataType.default.int8},
-                    {name: "daylightSaving", type: DataType.default.int8},
+                    {name: "year", type: DataType.uint16},
+                    {name: "month", type: DataType.uint8},
+                    {name: "dayOfMonth", type: DataType.uint8},
+                    {name: "dayOfWeek", type: DataType.uint8},
+                    {name: "hours", type: DataType.uint8},
+                    {name: "minutes", type: DataType.uint8},
+                    {name: "seconds", type: DataType.uint8},
+                    {name: "timezone", type: DataType.int8},
+                    {name: "daylightSaving", type: DataType.int8},
                 ]
             },
             getRTC: {
@@ -5720,8 +5720,8 @@ const Cluster: {
             setOperatingMode: {
                 ID: 0xFA,
                 parameters: [
-                    {name: 'mode', type: DataType.default.uint8},
-                    {name: 'home_network_flag', type: DataType.default.uint8},
+                    {name: 'mode', type: DataType.uint8},
+                    {name: 'home_network_flag', type: DataType.uint8},
                     //{name: 'profileID', type: dataType_1.default.uint16}
                 ]
             },
@@ -5736,15 +5736,15 @@ const Cluster: {
             FaultReport: {
                 ID: 0x01,
                 parameters: [
-                    {name: 'manufId', type: DataType.default.uint16},
-                    {name: 'modelId', type: DataType.default.uint16},
-                    {name: 'faultId', type: DataType.default.uint16},
+                    {name: 'manufId', type: DataType.uint16},
+                    {name: 'modelId', type: DataType.uint16},
+                    {name: 'faultId', type: DataType.uint16},
                 ]
             },
             GeneralCommand: {
                 ID: 0x02,
                 parameters: [
-                    {name: 'command', type: DataType.default.charStr}
+                    {name: 'command', type: DataType.charStr}
                 ]                
             },
             /*
@@ -5763,34 +5763,34 @@ const Cluster: {
             recvHeartbeat: {
                 ID: 0xFB,
                 parameters: [
-                    {name: 'statusFlags', type: DataType.default.uint8},
-                    {name: 'msTimer', type: DataType.default.uint32},
-                    {name: 'psuVoltage', type: DataType.default.uint16},
-                    {name: 'temperature', type: DataType.default.uint16},
-                    {name: 'rssi', type: DataType.default.int8},
-                    {name: 'lqi', type: DataType.default.uint8}, //255 == best
-                    {name: 'switchMask', type: DataType.default.uint8},
-                    {name: 'switchState', type: DataType.default.uint8}
+                    {name: 'statusFlags', type: DataType.uint8},
+                    {name: 'msTimer', type: DataType.uint32},
+                    {name: 'psuVoltage', type: DataType.uint16},
+                    {name: 'temperature', type: DataType.uint16},
+                    {name: 'rssi', type: DataType.int8},
+                    {name: 'lqi', type: DataType.uint8}, //255 == best
+                    {name: 'switchMask', type: DataType.uint8},
+                    {name: 'switchState', type: DataType.uint8}
                 ]
             },
             getRTC: {
                 ID: 0x80,
                 parameters: [
-                    {name: "year", type: DataType.default.uint16},
-                    {name: "month", type: DataType.default.uint8},
-                    {name: "dayOfMonth", type: DataType.default.uint8},
-                    {name: "dayOfWeek", type: DataType.default.uint8},
-                    {name: "hours", type: DataType.default.uint8},
-                    {name: "minutes", type: DataType.default.uint8},
-                    {name: "seconds", type: DataType.default.uint8},
-                    {name: "timezone", type: DataType.default.int8},
-                    {name: "daylightSaving", type: DataType.default.int8},
+                    {name: "year", type: DataType.uint16},
+                    {name: "month", type: DataType.uint8},
+                    {name: "dayOfMonth", type: DataType.uint8},
+                    {name: "dayOfWeek", type: DataType.uint8},
+                    {name: "hours", type: DataType.uint8},
+                    {name: "minutes", type: DataType.uint8},
+                    {name: "seconds", type: DataType.uint8},
+                    {name: "timezone", type: DataType.int8},
+                    {name: "daylightSaving", type: DataType.int8},
                 ]
             },
             stdOut: {
                 ID: 0x82,
                 parameters: [
-                    { name: "msg", type: DataType.default.charStr }
+                    { name: "msg", type: DataType.charStr }
                 ]
             }
         }
@@ -5823,24 +5823,24 @@ const Cluster: {
             rangeTest: {
                 ID: 0xFD,
                 parameters: [
-                    {name: 'rssi', type: DataType.default.int8},
-                    {name: 'lqi', type: DataType.default.uint8},
+                    {name: 'rssi', type: DataType.int8},
+                    {name: 'lqi', type: DataType.uint8},
                 ]
             },
             respHello: {
                 ID: 0xFE,
                 parameters: [
-                    {name: 'nodeId', type: DataType.default.uint16},
-                    {name: 'eui64', type: DataType.default.uint64},
-                    {name: 'mfgId', type: DataType.default.uint16},
-                    {name: 'deviceType', type: DataType.default.uint16},
-                    {name: 'appRelease', type: DataType.default.uint8},
-                    {name: 'appVersion', type: DataType.default.uint8},
-                    {name: 'hwMinorVersion', type: DataType.default.uint8},
-                    {name: 'hwMajorVersion', type: DataType.default.uint8},
-                    {name: 'mfg', type: DataType.default.charStr},
-                    {name: 'model', type: DataType.default.charStr},
-                    {name: 'dateCode', type: DataType.default.charStr}
+                    {name: 'nodeId', type: DataType.uint16},
+                    {name: 'eui64', type: DataType.uint64},
+                    {name: 'mfgId', type: DataType.uint16},
+                    {name: 'deviceType', type: DataType.uint16},
+                    {name: 'appRelease', type: DataType.uint8},
+                    {name: 'appVersion', type: DataType.uint8},
+                    {name: 'hwMinorVersion', type: DataType.uint8},
+                    {name: 'hwMajorVersion', type: DataType.uint8},
+                    {name: 'mfg', type: DataType.charStr},
+                    {name: 'model', type: DataType.charStr},
+                    {name: 'dateCode', type: DataType.charStr}
                 ]
             }
         }
@@ -5852,8 +5852,8 @@ const Cluster: {
             do: {
                 ID: 0x00,
                 parameters: [
-                    {id1: 'id', type: DataType.default.uint32},
-                    {id2: 'id', type: DataType.default.uint32}
+                    {name: 'id1', type: DataType.uint32},
+                    {name: 'id2', type: DataType.uint32}
                 ]
             }
         },
@@ -5861,15 +5861,15 @@ const Cluster: {
             do1: {
                 ID: 0x01,
                 parameters: [
-                    {name: 'status', type: DataType.default.uint8}
+                    {name: 'status', type: DataType.uint8}
                 ]
             },
             do2: {
                 ID: 0x04,
                 parameters: [
-                    {name: 'status', type: DataType.default.uint64},
-                    {name: 'app_release', type: DataType.default.uint8},
-                    {name: 'app_version', type: DataType.default.uint8}
+                    {name: 'status', type: DataType.uint64},
+                    {name: 'app_release', type: DataType.uint8},
+                    {name: 'app_version', type: DataType.uint8}
                 ]
             }
         }
