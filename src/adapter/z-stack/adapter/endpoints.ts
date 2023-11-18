@@ -21,7 +21,8 @@ const EndpointDefaults: {
 
 export const Endpoints = [
     {...EndpointDefaults, endpoint: 1, appprofid: 0x0104},
-    {...EndpointDefaults, endpoint: 2, appprofid: 0x0101},
+    { ...EndpointDefaults, endpoint: 2, appprofid: 0xc216 ,appnumoutclusters: 1,
+        appoutclusterlist: [Zcl.Utils.getCluster("alertmeDeviceGeneral").ID] },
     // Required for https://github.com/Koenkk/zigbee-herdsman-converters/commit/d0fb06c2429171f327950484ea3dec80864637cc
     {...EndpointDefaults, endpoint: 3, appprofid: 0x0104},
     {...EndpointDefaults, endpoint: 4, appprofid: 0x0107},
@@ -50,6 +51,14 @@ export const Endpoints = [
         appprofid: 0x0104,
         appnuminclusters: 1,
         appinclusterlist: [Zcl.Utils.getCluster('genOta').ID]
+    },
+    {...EndpointDefaults,
+        endpoint: 14,
+        //appprofid: 0xc216,
+        //appprofid: 0xFFFF,
+        appprofid: 0x0101
+        //appnumoutclusters: 1,
+        //appoutclusterlist: [Zcl.Utils.getCluster("alertmeDeviceGeneral").ID]
     },
     // Insta/Jung/Gira: OTA fallback EP (since it's buggy in firmware 10023202 when it tries to find a matching EP for
     // OTA - it queries for ZLL profile, but then contacts with HA profile)

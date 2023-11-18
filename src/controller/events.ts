@@ -136,6 +136,29 @@ const CommandsLookup: {[s: string]: MessagePayloadType} = {
     
     // Schneider
     'schneiderWiserThermostatBoost':'commandSchneiderWiserThermostatBoost',
+
+    //alertmePowerUsage
+    'powerDemandReport':'commandNotification',
+    'powerConsumptionReport':'commandNotification',
+    'powerMeterUpdate':'commandNotification',
+
+    //alertmeSwitchState
+    'respSwitchStatus':'commandNotification',
+
+    //alertmeDeviceGeneral
+    'FaultReport':'commandNotification',
+    'recvHeartbeat':'commandNotification',
+    'getRTC':'commandNotification',
+    'stdOut':'commandNotification',
+
+    //alertmeJoin
+    'rangeTest':'commandNotification',
+    'respHello':'commandNotification',
+
+    //alertmeUpgrade
+    'do1':'commandNotification',
+    'do2':'commandNotification'
+
 };
 
 type MessagePayloadType =

@@ -5594,6 +5594,286 @@ const Cluster: {
         },
         commandsResponse: {},
     },
+
+    alertmeSwitchState: {
+        ID: 0xEE,
+        attributes: {},
+        commands: {
+            //local,remote
+            setRemoteMode: {
+                ID: 0x01,
+                parameters: [
+                    {name: 'mode', type: DataType.default.uint8},
+                    //{name: 'home_network_flag', type: dataType_1.default.uint8},
+                    //{name: 'profileID', type: dataType_1.default.uint16}
+                ],
+            },
+            //relay on,off
+            setSwitchState: {
+                ID: 0x02,
+                parameters: [
+                    {name: 'state', type: DataType.default.uint8},
+                    {name: 'home_network_flag', type: DataType.default.uint8}, //relayMask
+                    //{name: 'profileID', type: dataType_1.default.uint16}
+                ]
+            },
+            reqSwitchStatus: {
+                ID: 0x03,
+                parameters: [
+                    //{name: 'profileID', type: dataType_1.default.uint16}
+                ]
+            }
+        },
+        commandsResponse: {
+            /*
+                const u8 OPERATING_POWER_SOURCE_MASK = 0x4;
+                const u8 OPERATING_POWER_SOURCE_BATTERY = 0x0;
+                const u8 OPERATING_POWER_SOURCE_MAINS = 0x4;
+
+                const u8 OPERATING_MODE_MASK = 0x2;
+                const u8 OPERATING_MODE_LOCAL = 0x0;
+                const u8 OPERATING_MODE_REMOTE = 0x2;
+
+                const u8 RELAY_STATE_MASK = 0x01;
+                const u8 RELAY_STATE_OPEN = 0x00;
+                const u8 RELAY_STATE_CLOSED = 0x01;
+            */
+            respSwitchStatus: {
+                ID: 0x80,
+                parameters: [
+                    //powerStatus == local/remote && battery/mains
+                    {name: 'powerStatus', type: DataType.default.uint8},
+                    //on/off
+                    {name: 'switchState', type: DataType.default.uint8}
+                ]
+            }
+        }
+    },
+    alertmePowerUsage: {
+        ID: 0xEF,
+        attributes: {},
+        commands: {  
+        },
+        commandsResponse: {
+
+            powerDemandReport: {
+                ID: 0x81,
+                parameters: [
+                    //power value in kW
+                    {name: 'powerDemand', type: DataType.default.uint16},
+                ]
+            },
+            powerConsumptionReport: {
+                ID: 0x82,
+                parameters: [
+                    //power value in kW/hr
+                    {name: 'powerConsumption', type: DataType.default.uint32},
+                    //uptime in seconds
+                    {name: 'uptime', type: DataType.default.uint32},
+                    {name: 'unknown', type: DataType.default.uint8}
+                ]
+            },
+            powerMeterUpdate: {
+                ID: 0x86,
+                parameters: [
+                    {name: 'powerMeterUnknown', type: BuffaloZclDataType.default.BUFFER}
+                ]
+            },
+
+        }
+    },
+    alertmeDeviceGeneral: {
+        ID: 0xF0,
+        attributes: {},
+        commands: {
+            setRTC: {
+                ID: 0x00,
+                parameters: [
+                    {name: "year", type: DataType.default.uint16},
+                    {name: "month", type: DataType.default.uint8},
+                    {name: "dayOfMonth", type: DataType.default.uint8},
+                    {name: "dayOfWeek", type: DataType.default.uint8},
+                    {name: "hours", type: DataType.default.uint8},
+                    {name: "minutes", type: DataType.default.uint8},
+                    {name: "seconds", type: DataType.default.uint8},
+                    {name: "timezone", type: DataType.default.int8},
+                    {name: "daylightSaving", type: DataType.default.int8},
+                ]
+            },
+            getRTC: {
+                ID: 0x80,
+                parameters: [
+                ]
+            },
+            
+            /*
+            const u8 MODE_NORMAL = 0x00;
+            const u8 MODE_RANGE_TEST = 0x01;
+            const u8 MODE_TEST = 0x02;
+            const u8 MODE_SEEKING = 0x03;
+            const u8 MODE_IDLE = 0x04;
+            const u8 MODE_QUIESCENT = 0x05;
+
+            const u8 FLAG_CLEAR_HNF = 0x01;
+            const u8 FLAG_SET_HNF = 0x01;
+            */
+            setOperatingMode: {
+                ID: 0xFA,
+                parameters: [
+                    {name: 'mode', type: DataType.default.uint8},
+                    {name: 'home_network_flag', type: DataType.default.uint8},
+                    //{name: 'profileID', type: dataType_1.default.uint16}
+                ]
+            },
+            decreasePolling: {
+                ID: 0xFD,
+                parameters: [
+                    //{name: 'profileID', type: dataType_1.default.uint16}   
+                ]
+            }
+        },
+        commandsResponse: {
+            FaultReport: {
+                ID: 0x01,
+                parameters: [
+                    {name: 'manufId', type: DataType.default.uint16},
+                    {name: 'modelId', type: DataType.default.uint16},
+                    {name: 'faultId', type: DataType.default.uint16},
+                ]
+            },
+            GeneralCommand: {
+                ID: 0x02,
+                parameters: [
+                    {name: 'command', type: DataType.default.charStr}
+                ]                
+            },
+            /*
+                const u8 LIFESIGN_HAS_VOLTAGE = 0x01;
+                const u8 LIFESIGN_HAS_TEMPERATURE = 0x02;
+                const u8 LIFESIGN_HAS_SWITCH_STATUS = 0x04;
+                const u8 LIFESIGN_HAS_LQI = 0x08;
+                const u8 LIFESIGN_HAS_RSSI = 0x10;
+
+                const u8 SWITCH_MASK_TAMPER_BUTTON = 0x02;
+                const u8 SWITCH_MASK_MAIN_SENSOR = 0x01;
+
+                const u8 SWITCH_STATE_TAMPER_BUTTON = 0x02;
+                const u8 SWITCH_STATE_MAIN_SENSOR = 0x01;
+            */
+            recvHeartbeat: {
+                ID: 0xFB,
+                parameters: [
+                    {name: 'statusFlags', type: DataType.default.uint8},
+                    {name: 'msTimer', type: DataType.default.uint32},
+                    {name: 'psuVoltage', type: DataType.default.uint16},
+                    {name: 'temperature', type: DataType.default.uint16},
+                    {name: 'rssi', type: DataType.default.int8},
+                    {name: 'lqi', type: DataType.default.uint8}, //255 == best
+                    {name: 'switchMask', type: DataType.default.uint8},
+                    {name: 'switchState', type: DataType.default.uint8}
+                ]
+            },
+            getRTC: {
+                ID: 0x80,
+                parameters: [
+                    {name: "year", type: DataType.default.uint16},
+                    {name: "month", type: DataType.default.uint8},
+                    {name: "dayOfMonth", type: DataType.default.uint8},
+                    {name: "dayOfWeek", type: DataType.default.uint8},
+                    {name: "hours", type: DataType.default.uint8},
+                    {name: "minutes", type: DataType.default.uint8},
+                    {name: "seconds", type: DataType.default.uint8},
+                    {name: "timezone", type: DataType.default.int8},
+                    {name: "daylightSaving", type: DataType.default.int8},
+                ]
+            },
+            stdOut: {
+                ID: 0x82,
+                parameters: [
+                    { name: "msg", type: DataType.default.charStr }
+                ]
+            }
+        }
+    },
+    alertmeTamper: {
+        ID: 0xF2,
+        attributes: {},
+        commands: {  
+            clear: {
+                ID: 0x02,
+                parameters: [
+                ]
+            }
+        },
+        commandsResponse: {
+        }
+    },
+    alertmeJoin: {
+        ID: 0xF6,
+        attributes: {},
+        commands: {  
+            reqHello: {
+                ID: 0xFC,
+                parameters: [
+                    //{name: 'profileID', type: dataType_1.default.uint16}
+                ]
+            }
+        },
+        commandsResponse: {
+            rangeTest: {
+                ID: 0xFD,
+                parameters: [
+                    {name: 'rssi', type: DataType.default.int8},
+                    {name: 'lqi', type: DataType.default.uint8},
+                ]
+            },
+            respHello: {
+                ID: 0xFE,
+                parameters: [
+                    {name: 'nodeId', type: DataType.default.uint16},
+                    {name: 'eui64', type: DataType.default.uint64},
+                    {name: 'mfgId', type: DataType.default.uint16},
+                    {name: 'deviceType', type: DataType.default.uint16},
+                    {name: 'appRelease', type: DataType.default.uint8},
+                    {name: 'appVersion', type: DataType.default.uint8},
+                    {name: 'hwMinorVersion', type: DataType.default.uint8},
+                    {name: 'hwMajorVersion', type: DataType.default.uint8},
+                    {name: 'mfg', type: DataType.default.charStr},
+                    {name: 'model', type: DataType.default.charStr},
+                    {name: 'dateCode', type: DataType.default.charStr}
+                ]
+            }
+        }
+    },
+    alertmeUpgrade: {
+        ID: 0xB7D,
+        attributes: {},
+        commands: {  
+            do: {
+                ID: 0x00,
+                parameters: [
+                    {id1: 'id', type: DataType.default.uint32},
+                    {id2: 'id', type: DataType.default.uint32}
+                ]
+            }
+        },
+        commandsResponse: {
+            do1: {
+                ID: 0x01,
+                parameters: [
+                    {name: 'status', type: DataType.default.uint8}
+                ]
+            },
+            do2: {
+                ID: 0x04,
+                parameters: [
+                    {name: 'status', type: DataType.default.uint64},
+                    {name: 'app_release', type: DataType.default.uint8},
+                    {name: 'app_version', type: DataType.default.uint8}
+                ]
+            }
+        }
+    },
 };
 
 export default Cluster;
