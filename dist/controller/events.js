@@ -12,7 +12,8 @@ var Events;
     Events["deviceLeave"] = "deviceLeave";
     Events["permitJoinChanged"] = "permitJoinChanged";
     Events["lastSeenChanged"] = "lastSeenChanged";
-})(Events || (exports.Events = Events = {}));
+})(Events || (Events = {}));
+exports.Events = Events;
 const CommandsLookup = {
     'notification': 'commandNotification',
     'commisioningNotification': 'commandCommisioningNotification',

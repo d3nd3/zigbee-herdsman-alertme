@@ -17,7 +17,7 @@ var SecurityManagerAuthenticationOption;
     SecurityManagerAuthenticationOption[SecurityManagerAuthenticationOption["AuthenticatedCBCK"] = 1] = "AuthenticatedCBCK";
     /* ZDSecMgr_Authenticated_EA */
     SecurityManagerAuthenticationOption[SecurityManagerAuthenticationOption["AuthenticatedEA"] = 2] = "AuthenticatedEA";
-})(SecurityManagerAuthenticationOption || (exports.SecurityManagerAuthenticationOption = SecurityManagerAuthenticationOption = {}));
+})(SecurityManagerAuthenticationOption = exports.SecurityManagerAuthenticationOption || (exports.SecurityManagerAuthenticationOption = {}));
 /**
  * Creates a security manager entry.
  *

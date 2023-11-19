@@ -5349,23 +5349,25 @@ const Cluster = {
                 ID: 0x01,
                 parameters: [
                     { name: 'mode', type: dataType_1.default.uint8 },
-                    //{name: 'home_network_flag', type: dataType_1.default.uint8},
-                    //{name: 'profileID', type: dataType_1.default.uint16}
+                    //{name: 'home_network_flag', type: DataType.uint8},
+                    //{name: 'profileID', type: DataType.uint16}
                 ],
             },
             //relay on,off
+            //some devices have multiple switches, like tamper switch.
+            //you can see multiple switches in one command using the mask.
             setSwitchState: {
                 ID: 0x02,
                 parameters: [
                     { name: 'state', type: dataType_1.default.uint8 },
-                    { name: 'home_network_flag', type: dataType_1.default.uint8 }, //relayMask
-                    //{name: 'profileID', type: dataType_1.default.uint16}
+                    { name: 'relay_mask', type: dataType_1.default.uint8 },
+                    //{name: 'profileID', type: DataType.uint16}
                 ]
             },
             reqSwitchStatus: {
                 ID: 0x03,
                 parameters: [
-                //{name: 'profileID', type: dataType_1.default.uint16}
+                //{name: 'profileID', type: DataType.uint16}
                 ]
             }
         },
@@ -5403,7 +5405,7 @@ const Cluster = {
                 ID: 0x81,
                 parameters: [
                     //power value in kW
-                    { name: 'powerDemand', type: dataType_1.default.uint16 },
+                    { name: 'watts', type: dataType_1.default.uint16 },
                 ]
             },
             powerConsumptionReport: {
@@ -5412,8 +5414,8 @@ const Cluster = {
                     //power value in kW/hr
                     { name: 'powerConsumption', type: dataType_1.default.uint32 },
                     //uptime in seconds
-                    { name: 'uptime', type: dataType_1.default.uint32 },
-                    { name: 'unknown', type: dataType_1.default.uint8 }
+                    { name: 'uptimeSecs', type: dataType_1.default.uint32 },
+                    { name: 'wasFirst', type: dataType_1.default.uint8 }
                 ]
             },
             powerMeterUpdate: {
@@ -5454,7 +5456,7 @@ const Cluster = {
             const u8 MODE_IDLE = 0x04;
             const u8 MODE_QUIESCENT = 0x05;
 
-            const u8 FLAG_CLEAR_HNF = 0x01;
+            const u8 FLAG_CLEAR_HNF = 0x02;
             const u8 FLAG_SET_HNF = 0x01;
             */
             setOperatingMode: {
@@ -5462,13 +5464,13 @@ const Cluster = {
                 parameters: [
                     { name: 'mode', type: dataType_1.default.uint8 },
                     { name: 'home_network_flag', type: dataType_1.default.uint8 },
-                    //{name: 'profileID', type: dataType_1.default.uint16}
+                    //{name: 'profileID', type: DataType.uint16}
                 ]
             },
             decreasePolling: {
                 ID: 0xFD,
                 parameters: [
-                //{name: 'profileID', type: dataType_1.default.uint16}   
+                //{name: 'profileID', type: DataType.uint16}   
                 ]
             }
         },
@@ -5504,7 +5506,7 @@ const Cluster = {
                 ID: 0xFB,
                 parameters: [
                     { name: 'statusFlags', type: dataType_1.default.uint8 },
-                    { name: 'msTimer', type: dataType_1.default.uint32 },
+                    { name: 'uptimeMilliSecs', type: dataType_1.default.uint32 },
                     { name: 'psuVoltage', type: dataType_1.default.uint16 },
                     { name: 'temperature', type: dataType_1.default.uint16 },
                     { name: 'rssi', type: dataType_1.default.int8 },
@@ -5535,6 +5537,7 @@ const Cluster = {
             }
         }
     },
+    //0xF1 - 242     LED (not used)
     alertmeTamper: {
         ID: 0xF2,
         attributes: {},
@@ -5553,7 +5556,7 @@ const Cluster = {
             reqHello: {
                 ID: 0xFC,
                 parameters: [
-                //{name: 'profileID', type: dataType_1.default.uint16}
+                //{name: 'profileID', type: DataType.uint16}
                 ]
             }
         },
@@ -5583,6 +5586,11 @@ const Cluster = {
             }
         }
     },
+    //0xF3 243 == button
+    //Endpoint 240.
+    //0xb7d == alertmeUpgrade (BootLoader?)
+    //0xb7e == AppUpgrade (Program?)
+    //0xb7f == ProxyUpgrade
     alertmeUpgrade: {
         ID: 0xB7D,
         attributes: {},

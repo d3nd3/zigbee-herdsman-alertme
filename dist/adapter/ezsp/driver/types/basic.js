@@ -40,52 +40,52 @@ class int_t {
         return '';
     }
 }
-exports.int_t = int_t;
 int_t._signed = true;
+exports.int_t = int_t;
 class int8s extends int_t {
 }
-exports.int8s = int8s;
 int8s._size = 1;
+exports.int8s = int8s;
 class int16s extends int_t {
 }
-exports.int16s = int16s;
 int16s._size = 2;
+exports.int16s = int16s;
 class int24s extends int_t {
 }
-exports.int24s = int24s;
 int24s._size = 3;
+exports.int24s = int24s;
 class int32s extends int_t {
 }
-exports.int32s = int32s;
 int32s._size = 4;
+exports.int32s = int32s;
 class int64s extends int_t {
 }
-exports.int64s = int64s;
 int64s._size = 8;
+exports.int64s = int64s;
 class uint_t extends int_t {
 }
-exports.uint_t = uint_t;
 uint_t._signed = false;
+exports.uint_t = uint_t;
 class uint8_t extends uint_t {
 }
-exports.uint8_t = uint8_t;
 uint8_t._size = 1;
+exports.uint8_t = uint8_t;
 class uint16_t extends uint_t {
 }
-exports.uint16_t = uint16_t;
 uint16_t._size = 2;
+exports.uint16_t = uint16_t;
 class uint24_t extends uint_t {
 }
-exports.uint24_t = uint24_t;
 uint24_t._size = 3;
+exports.uint24_t = uint24_t;
 class uint32_t extends uint_t {
 }
-exports.uint32_t = uint32_t;
 uint32_t._size = 4;
+exports.uint32_t = uint32_t;
 class uint64_t extends uint_t {
 }
-exports.uint64_t = uint64_t;
 uint64_t._size = 8;
+exports.uint64_t = uint64_t;
 class LVBytes {
     /* eslint-disable-next-line @typescript-eslint/no-explicit-any*/
     static serialize(cls, value) {

@@ -8,7 +8,7 @@ var AddressMode;
     AddressMode[AddressMode["ADDR_16BIT"] = 2] = "ADDR_16BIT";
     AddressMode[AddressMode["ADDR_64BIT"] = 3] = "ADDR_64BIT";
     AddressMode[AddressMode["ADDR_BROADCAST"] = 15] = "ADDR_BROADCAST";
-})(AddressMode || (exports.AddressMode = AddressMode = {}));
+})(AddressMode = exports.AddressMode || (exports.AddressMode = {}));
 var DevStates;
 (function (DevStates) {
     DevStates[DevStates["HOLD"] = 0] = "HOLD";
@@ -36,7 +36,7 @@ var DevStates;
     DevStates[DevStates["TABLE_FULL"] = 140] = "TABLE_FULL";
     DevStates[DevStates["NOT_AUTHORIZED"] = 141] = "NOT_AUTHORIZED";
     DevStates[DevStates["BINDING_TABLE_FULL"] = 142] = "BINDING_TABLE_FULL";
-})(DevStates || (exports.DevStates = DevStates = {}));
+})(DevStates = exports.DevStates || (exports.DevStates = {}));
 var NvItemsIds;
 (function (NvItemsIds) {
     NvItemsIds[NvItemsIds["EXTADDR"] = 1] = "EXTADDR";
@@ -156,11 +156,11 @@ var NvItemsIds;
     NvItemsIds[NvItemsIds["ZNP_HAS_CONFIGURED_ZSTACK3"] = 96] = "ZNP_HAS_CONFIGURED_ZSTACK3";
     NvItemsIds[NvItemsIds["ZCD_NV_EX_APS_KEY_DATA_TABLE"] = 6] = "ZCD_NV_EX_APS_KEY_DATA_TABLE";
     NvItemsIds[NvItemsIds["ZCD_NV_EX_ADDRMGR"] = 1] = "ZCD_NV_EX_ADDRMGR";
-})(NvItemsIds || (exports.NvItemsIds = NvItemsIds = {}));
+})(NvItemsIds = exports.NvItemsIds || (exports.NvItemsIds = {}));
 var NvSystemIds;
 (function (NvSystemIds) {
     NvSystemIds[NvSystemIds["ZSTACK"] = 1] = "ZSTACK";
-})(NvSystemIds || (exports.NvSystemIds = NvSystemIds = {}));
+})(NvSystemIds = exports.NvSystemIds || (exports.NvSystemIds = {}));
 var ZnpCommandStatus;
 (function (ZnpCommandStatus) {
     ZnpCommandStatus[ZnpCommandStatus["SUCCESS"] = 0] = "SUCCESS";
@@ -245,7 +245,7 @@ var ZnpCommandStatus;
     ZnpCommandStatus[ZnpCommandStatus["MAC_TRACKING_OFF"] = 248] = "MAC_TRACKING_OFF";
     ZnpCommandStatus[ZnpCommandStatus["MAC_SCAN_IN_PROGRESS"] = 252] = "MAC_SCAN_IN_PROGRESS";
     ZnpCommandStatus[ZnpCommandStatus["MAC_SRC_MATCH_INVALID_INDEX"] = 255] = "MAC_SRC_MATCH_INVALID_INDEX";
-})(ZnpCommandStatus || (exports.ZnpCommandStatus = ZnpCommandStatus = {}));
+})(ZnpCommandStatus = exports.ZnpCommandStatus || (exports.ZnpCommandStatus = {}));
 var CapabInfoMask;
 (function (CapabInfoMask) {
     CapabInfoMask[CapabInfoMask["ALTPANCOORD"] = 1] = "ALTPANCOORD";
@@ -254,7 +254,7 @@ var CapabInfoMask;
     CapabInfoMask[CapabInfoMask["RCVR_ON_IDLE"] = 8] = "RCVR_ON_IDLE";
     CapabInfoMask[CapabInfoMask["SECURITY_CAPABLE"] = 64] = "SECURITY_CAPABLE";
     CapabInfoMask[CapabInfoMask["ALLOC_ADDR"] = 128] = "ALLOC_ADDR";
-})(CapabInfoMask || (exports.CapabInfoMask = CapabInfoMask = {}));
+})(CapabInfoMask = exports.CapabInfoMask || (exports.CapabInfoMask = {}));
 var SecurityLevel;
 (function (SecurityLevel) {
     SecurityLevel[SecurityLevel["NONE"] = 0] = "NONE";
@@ -265,7 +265,7 @@ var SecurityLevel;
     SecurityLevel[SecurityLevel["ENC_MIC_32"] = 5] = "ENC_MIC_32";
     SecurityLevel[SecurityLevel["ENC_MIC_64"] = 6] = "ENC_MIC_64";
     SecurityLevel[SecurityLevel["ENC_MIC_128"] = 7] = "ENC_MIC_128";
-})(SecurityLevel || (exports.SecurityLevel = SecurityLevel = {}));
+})(SecurityLevel = exports.SecurityLevel || (exports.SecurityLevel = {}));
 var ScanDuration;
 (function (ScanDuration) {
     ScanDuration[ScanDuration["CH_CHANGE_REQ"] = 254] = "CH_CHANGE_REQ";
@@ -286,5 +286,5 @@ var ScanDuration;
     ScanDuration[ScanDuration["T_60_MSEC"] = 2] = "T_60_MSEC";
     ScanDuration[ScanDuration["T_30_MSEC"] = 1] = "T_30_MSEC";
     ScanDuration[ScanDuration["T_15_MSEC"] = 0] = "T_15_MSEC";
-})(ScanDuration || (exports.ScanDuration = ScanDuration = {}));
+})(ScanDuration = exports.ScanDuration || (exports.ScanDuration = {}));
 //# sourceMappingURL=common.js.map

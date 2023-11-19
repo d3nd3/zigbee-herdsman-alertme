@@ -10,5 +10,6 @@ var Events;
     Events["disconnected"] = "disconnected";
     Events["deviceAnnounce"] = "deviceAnnounce";
     Events["deviceLeave"] = "deviceLeave";
-})(Events || (exports.Events = Events = {}));
+})(Events || (Events = {}));
+exports.Events = Events;
 //# sourceMappingURL=events.js.map

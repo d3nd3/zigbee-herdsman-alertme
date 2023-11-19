@@ -22,7 +22,7 @@ var AddressManagerUser;
     AddressManagerUser[AddressManagerUser["Binding"] = 4] = "Binding";
     /* ADDRMGR_USER_PRIVATE1 */
     AddressManagerUser[AddressManagerUser["Private1"] = 8] = "Private1";
-})(AddressManagerUser || (exports.AddressManagerUser = AddressManagerUser = {}));
+})(AddressManagerUser = exports.AddressManagerUser || (exports.AddressManagerUser = {}));
 const emptyAddress1 = Buffer.alloc(8, 0x00);
 const emptyAddress2 = Buffer.alloc(8, 0xff);
 /**

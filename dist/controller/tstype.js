@@ -5,5 +5,6 @@ exports.GreenPowerEvents = void 0;
 var GreenPowerEvents;
 (function (GreenPowerEvents) {
     GreenPowerEvents["deviceJoined"] = "deviceJoined";
-})(GreenPowerEvents || (exports.GreenPowerEvents = GreenPowerEvents = {}));
+})(GreenPowerEvents || (GreenPowerEvents = {}));
+exports.GreenPowerEvents = GreenPowerEvents;
 //# sourceMappingURL=tstype.js.map

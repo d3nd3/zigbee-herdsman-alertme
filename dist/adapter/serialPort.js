@@ -17,7 +17,7 @@ class SerialPort extends stream_1.SerialPortStream {
         super(opts, openCallback);
     }
 }
-exports.SerialPort = SerialPort;
 SerialPort.list = DetectedBinding.list;
 SerialPort.binding = DetectedBinding;
+exports.SerialPort = SerialPort;
 //# sourceMappingURL=serialPort.js.map

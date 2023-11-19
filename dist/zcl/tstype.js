@@ -6,5 +6,6 @@ var StructuredIndicatorType;
     StructuredIndicatorType[StructuredIndicatorType["WriteWhole"] = 0] = "WriteWhole";
     StructuredIndicatorType[StructuredIndicatorType["Add"] = 16] = "Add";
     StructuredIndicatorType[StructuredIndicatorType["Remove"] = 32] = "Remove";
-})(StructuredIndicatorType || (exports.StructuredIndicatorType = StructuredIndicatorType = {}));
+})(StructuredIndicatorType || (StructuredIndicatorType = {}));
+exports.StructuredIndicatorType = StructuredIndicatorType;
 //# sourceMappingURL=tstype.js.map

@@ -16,18 +16,18 @@ var ADDRESS_MODE;
     ADDRESS_MODE[ADDRESS_MODE["ieee_no_ack"] = 8] = "ieee_no_ack";
     ADDRESS_MODE[ADDRESS_MODE["bound_non_blocking"] = 9] = "bound_non_blocking";
     ADDRESS_MODE[ADDRESS_MODE["bound_non_blocking_no_ack"] = 10] = "bound_non_blocking_no_ack";
-})(ADDRESS_MODE || (exports.ADDRESS_MODE = ADDRESS_MODE = {}));
+})(ADDRESS_MODE = exports.ADDRESS_MODE || (exports.ADDRESS_MODE = {}));
 var DEVICE_TYPE;
 (function (DEVICE_TYPE) {
     DEVICE_TYPE[DEVICE_TYPE["coordinator"] = 0] = "coordinator";
     DEVICE_TYPE[DEVICE_TYPE["router"] = 1] = "router";
     DEVICE_TYPE[DEVICE_TYPE["legacy_router"] = 2] = "legacy_router";
-})(DEVICE_TYPE || (exports.DEVICE_TYPE = DEVICE_TYPE = {}));
+})(DEVICE_TYPE = exports.DEVICE_TYPE || (exports.DEVICE_TYPE = {}));
 var BOOLEAN;
 (function (BOOLEAN) {
     BOOLEAN[BOOLEAN["false"] = 0] = "false";
     BOOLEAN[BOOLEAN["true"] = 1] = "true";
-})(BOOLEAN || (exports.BOOLEAN = BOOLEAN = {}));
+})(BOOLEAN = exports.BOOLEAN || (exports.BOOLEAN = {}));
 var LOG_LEVEL;
 (function (LOG_LEVEL) {
     LOG_LEVEL[LOG_LEVEL["EMERG"] = 0] = "EMERG";
@@ -38,13 +38,13 @@ var LOG_LEVEL;
     LOG_LEVEL[LOG_LEVEL["NOT  "] = 5] = "NOT  ";
     LOG_LEVEL[LOG_LEVEL["INFO "] = 6] = "INFO ";
     LOG_LEVEL[LOG_LEVEL["DEBUG"] = 7] = "DEBUG";
-})(LOG_LEVEL || (exports.LOG_LEVEL = LOG_LEVEL = {}));
+})(LOG_LEVEL = exports.LOG_LEVEL || (exports.LOG_LEVEL = {}));
 var NODE_LOGICAL_TYPE;
 (function (NODE_LOGICAL_TYPE) {
     NODE_LOGICAL_TYPE[NODE_LOGICAL_TYPE["coordinator"] = 0] = "coordinator";
     NODE_LOGICAL_TYPE[NODE_LOGICAL_TYPE["router"] = 1] = "router";
     NODE_LOGICAL_TYPE[NODE_LOGICAL_TYPE["end_device"] = 2] = "end_device";
-})(NODE_LOGICAL_TYPE || (exports.NODE_LOGICAL_TYPE = NODE_LOGICAL_TYPE = {}));
+})(NODE_LOGICAL_TYPE = exports.NODE_LOGICAL_TYPE || (exports.NODE_LOGICAL_TYPE = {}));
 var STATUS;
 (function (STATUS) {
     STATUS[STATUS["E_SL_MSG_STATUS_SUCCESS"] = 0] = "E_SL_MSG_STATUS_SUCCESS";
@@ -52,12 +52,12 @@ var STATUS;
     STATUS[STATUS["E_SL_MSG_STATUS_UNHANDLED_COMMAND"] = 2] = "E_SL_MSG_STATUS_UNHANDLED_COMMAND";
     STATUS[STATUS["E_SL_MSG_STATUS_BUSY"] = 3] = "E_SL_MSG_STATUS_BUSY";
     STATUS[STATUS["E_SL_MSG_STATUS_STACK_ALREADY_STARTED"] = 4] = "E_SL_MSG_STATUS_STACK_ALREADY_STARTED";
-})(STATUS || (exports.STATUS = STATUS = {}));
+})(STATUS = exports.STATUS || (exports.STATUS = {}));
 var PERMIT_JOIN_STATUS;
 (function (PERMIT_JOIN_STATUS) {
     PERMIT_JOIN_STATUS[PERMIT_JOIN_STATUS["on"] = 1] = "on";
     PERMIT_JOIN_STATUS[PERMIT_JOIN_STATUS["off"] = 0] = "off";
-})(PERMIT_JOIN_STATUS || (exports.PERMIT_JOIN_STATUS = PERMIT_JOIN_STATUS = {}));
+})(PERMIT_JOIN_STATUS = exports.PERMIT_JOIN_STATUS || (exports.PERMIT_JOIN_STATUS = {}));
 var NETWORK_JOIN_STATUS;
 (function (NETWORK_JOIN_STATUS) {
     NETWORK_JOIN_STATUS[NETWORK_JOIN_STATUS["joined_existing_network"] = 0] = "joined_existing_network";
@@ -179,18 +179,18 @@ var NETWORK_JOIN_STATUS;
     NETWORK_JOIN_STATUS[NETWORK_JOIN_STATUS["failed_242"] = 242] = "failed_242";
     NETWORK_JOIN_STATUS[NETWORK_JOIN_STATUS["failed_243"] = 243] = "failed_243";
     NETWORK_JOIN_STATUS[NETWORK_JOIN_STATUS["failed_244"] = 244] = "failed_244";
-})(NETWORK_JOIN_STATUS || (exports.NETWORK_JOIN_STATUS = NETWORK_JOIN_STATUS = {}));
+})(NETWORK_JOIN_STATUS = exports.NETWORK_JOIN_STATUS || (exports.NETWORK_JOIN_STATUS = {}));
 var ON_OFF_STATUS;
 (function (ON_OFF_STATUS) {
     ON_OFF_STATUS[ON_OFF_STATUS["on"] = 1] = "on";
     ON_OFF_STATUS[ON_OFF_STATUS["off"] = 0] = "off";
-})(ON_OFF_STATUS || (exports.ON_OFF_STATUS = ON_OFF_STATUS = {}));
+})(ON_OFF_STATUS = exports.ON_OFF_STATUS || (exports.ON_OFF_STATUS = {}));
 var RESTART_STATUS;
 (function (RESTART_STATUS) {
     RESTART_STATUS[RESTART_STATUS["startup"] = 0] = "startup";
     RESTART_STATUS[RESTART_STATUS["nfn_start"] = 2] = "nfn_start";
     RESTART_STATUS[RESTART_STATUS["running"] = 6] = "running";
-})(RESTART_STATUS || (exports.RESTART_STATUS = RESTART_STATUS = {}));
+})(RESTART_STATUS = exports.RESTART_STATUS || (exports.RESTART_STATUS = {}));
 var ZiGateCommandCode;
 (function (ZiGateCommandCode) {
     ZiGateCommandCode[ZiGateCommandCode["GetNetworkState"] = 9] = "GetNetworkState";
@@ -231,7 +231,7 @@ var ZiGateCommandCode;
     ZiGateCommandCode[ZiGateCommandCode["ManagementLQI"] = 78] = "ManagementLQI";
     ZiGateCommandCode[ZiGateCommandCode["SetSecurityStateKey"] = 34] = "SetSecurityStateKey";
     ZiGateCommandCode[ZiGateCommandCode["AddGroup"] = 96] = "AddGroup";
-})(ZiGateCommandCode || (exports.ZiGateCommandCode = ZiGateCommandCode = {}));
+})(ZiGateCommandCode = exports.ZiGateCommandCode || (exports.ZiGateCommandCode = {}));
 var ZiGateMessageCode;
 (function (ZiGateMessageCode) {
     ZiGateMessageCode[ZiGateMessageCode["DeviceAnnounce"] = 77] = "DeviceAnnounce";
@@ -260,19 +260,19 @@ var ZiGateMessageCode;
     ZiGateMessageCode[ZiGateMessageCode["RestartFactoryNew"] = 32775] = "RestartFactoryNew";
     ZiGateMessageCode[ZiGateMessageCode["ExtendedStatusCallBack"] = 39321] = "ExtendedStatusCallBack";
     ZiGateMessageCode[ZiGateMessageCode["AddGroupResponse"] = 32864] = "AddGroupResponse";
-})(ZiGateMessageCode || (exports.ZiGateMessageCode = ZiGateMessageCode = {}));
+})(ZiGateMessageCode = exports.ZiGateMessageCode || (exports.ZiGateMessageCode = {}));
 var ZPSNwkKeyState;
 (function (ZPSNwkKeyState) {
     ZPSNwkKeyState[ZPSNwkKeyState["ZPS_ZDO_NO_NETWORK_KEY"] = 0] = "ZPS_ZDO_NO_NETWORK_KEY";
     ZPSNwkKeyState[ZPSNwkKeyState["ZPS_ZDO_PRECONFIGURED_LINK_KEY"] = 1] = "ZPS_ZDO_PRECONFIGURED_LINK_KEY";
     ZPSNwkKeyState[ZPSNwkKeyState["ZPS_ZDO_DISTRIBUTED_LINK_KEY"] = 2] = "ZPS_ZDO_DISTRIBUTED_LINK_KEY";
     ZPSNwkKeyState[ZPSNwkKeyState["ZPS_ZDO_PRECONFIGURED_INSTALLATION_CODE"] = 3] = "ZPS_ZDO_PRECONFIGURED_INSTALLATION_CODE";
-})(ZPSNwkKeyState || (exports.ZPSNwkKeyState = ZPSNwkKeyState = {}));
+})(ZPSNwkKeyState = exports.ZPSNwkKeyState || (exports.ZPSNwkKeyState = {}));
 var ZPSNwkKeyType;
 (function (ZPSNwkKeyType) {
     ZPSNwkKeyType[ZPSNwkKeyType["ZPS_APS_UNIQUE_LINK_KEY"] = 0] = "ZPS_APS_UNIQUE_LINK_KEY";
     ZPSNwkKeyType[ZPSNwkKeyType["ZPS_APS_GLOBAL_LINK_KEY"] = 1] = "ZPS_APS_GLOBAL_LINK_KEY";
-})(ZPSNwkKeyType || (exports.ZPSNwkKeyType = ZPSNwkKeyType = {}));
+})(ZPSNwkKeyType = exports.ZPSNwkKeyType || (exports.ZPSNwkKeyType = {}));
 var PDMEventType;
 (function (PDMEventType) {
     PDMEventType[PDMEventType["E_PDM_SYSTEM_EVENT_WEAR_COUNT_TRIGGER_VALUE_REACHED"] = 0] = "E_PDM_SYSTEM_EVENT_WEAR_COUNT_TRIGGER_VALUE_REACHED";
@@ -291,7 +291,7 @@ var PDMEventType;
     PDMEventType[PDMEventType["E_PDM_SYSTEM_EVENT_SEQUENCE_VERIFY_FAIL"] = 13] = "E_PDM_SYSTEM_EVENT_SEQUENCE_VERIFY_FAIL";
     PDMEventType[PDMEventType["E_PDM_SYSTEM_EVENT_PDM_SMART_SAVE"] = 14] = "E_PDM_SYSTEM_EVENT_PDM_SMART_SAVE";
     PDMEventType[PDMEventType["E_PDM_SYSTEM_EVENT_PDM_FULL_SAVE"] = 15] = "E_PDM_SYSTEM_EVENT_PDM_FULL_SAVE";
-})(PDMEventType || (exports.PDMEventType = PDMEventType = {}));
+})(PDMEventType = exports.PDMEventType || (exports.PDMEventType = {}));
 const coordinatorEndpoints = [
     {
         ID: 0x01,
