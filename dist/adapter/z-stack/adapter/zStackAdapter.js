@@ -78,10 +78,10 @@ class ZStackAdapter extends adapter_1.default {
      */
     async start() {
         await this.znp.open();
-        const attempts = 3;
+        const attempts = 5;
         for (let i = 0; i < attempts; i++) {
             try {
-                await this.znp.request(Subsystem.SYS, 'ping', { capabilities: 1 });
+                await this.znp.request(Subsystem.SYS, 'ping', { capabilities: 1, timeout: 10000 });
                 break;
             }
             catch (e) {
